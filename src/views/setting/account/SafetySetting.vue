@@ -4,43 +4,43 @@
       <n-list>
         <n-list-item>
           <template #suffix>
-            <n-button type="primary" text>修改</n-button>
+            <n-button type="primary" text>Modify</n-button>
           </template>
-          <n-thing title="账户密码">
+          <n-thing title="Account Password">
             <template #description
-              ><span class="text-gray-400">绑定手机和邮箱，并设置密码，帐号更安全</span></template
+              ><span class="text-gray-400">Bind phone and email, set password for account security</span></template
             >
           </n-thing>
         </n-list-item>
         <n-list-item>
           <template #suffix>
-            <n-button type="primary" text>修改</n-button>
+            <n-button type="primary" text>Modify</n-button>
           </template>
-          <n-thing title="绑定手机">
+          <n-thing title="Bound Phone">
             <template #description
-              ><span class="text-gray-400">已绑定手机号：+86189****4877</span></template
+              ><span class="text-gray-400">Bound phone: +86189****4877</span></template
             >
           </n-thing>
         </n-list-item>
         <n-list-item>
           <template #suffix>
-            <n-button type="primary" text>设置</n-button>
+            <n-button type="primary" text>Set</n-button>
           </template>
-          <n-thing title="密保问题">
+          <n-thing title="Security Questions">
             <template #description
               ><span class="text-gray-400"
-                >未设置密保问题，密保问题可有效保护账户安全</span
+                >Security questions not set. They help protect account security</span
               ></template
             >
           </n-thing>
         </n-list-item>
         <n-list-item>
           <template #suffix>
-            <n-button type="primary" text>修改</n-button>
+            <n-button type="primary" text>Modify</n-button>
           </template>
-          <n-thing title="个性域名">
+          <n-thing title="Custom Domain">
             <template #description
-              ><span class="text-gray-400">已绑定域名：https://www.naiveui.com</span></template
+              ><span class="text-gray-400">Bound domain: https://www.naiveui.com</span></template
             >
           </n-thing>
         </n-list-item>

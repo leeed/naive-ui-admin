@@ -1,16 +1,16 @@
 <template>
   <div class="console">
-    <!--数据卡片-->
+    <!--Data Cards-->
     <n-grid cols="1 s:2 m:3 l:4 xl:4 2xl:4" responsive="screen" :x-gap="12" :y-gap="8">
       <n-grid-item>
         <NCard
-          title="访问量"
+          title="Visits"
           :segmented="{ content: true, footer: true }"
           size="small"
           :bordered="false"
         >
           <template #header-extra>
-            <n-tag type="success">日</n-tag>
+            <n-tag type="success">Day</n-tag>
           </template>
           <div class="flex justify-between px-1 py-1">
             <n-skeleton v-if="loading" :width="100" size="medium" />
@@ -20,7 +20,7 @@
             <div class="text-sn">
               <n-skeleton v-if="loading" :width="100" size="medium" />
               <template v-else>
-                日同比
+                Daily Comparison
                 <CountTo :startVal="1" suffix="%" :endVal="visits.rise" />
                 <n-icon size="12" color="#00ff6f">
                   <CaretUpOutlined />
@@ -30,7 +30,7 @@
             <div class="text-sn">
               <n-skeleton v-if="loading" :width="100" size="medium" />
               <template v-else>
-                周同比
+                Weekly Comparison
                 <CountTo :startVal="1" suffix="%" :endVal="visits.decline" />
                 <n-icon size="12" color="#ffde66">
                   <CaretDownOutlined />
@@ -42,7 +42,7 @@
             <div class="flex justify-between">
               <n-skeleton v-if="loading" text :repeat="2" />
               <template v-else>
-                <div class="text-sn"> 总访问量： </div>
+                <div class="text-sn"> Total Visits: </div>
                 <div class="text-sn">
                   <CountTo :startVal="1" :endVal="visits.amount" />
                 </div>
@@ -53,13 +53,13 @@
       </n-grid-item>
       <n-grid-item>
         <NCard
-          title="销售额"
+          title="Sales"
           :segmented="{ content: true, footer: true }"
           size="small"
           :bordered="false"
         >
           <template #header-extra>
-            <n-tag type="info">周</n-tag>
+            <n-tag type="info">Week</n-tag>
           </template>
           <div class="flex justify-between px-1 py-1">
             <n-skeleton v-if="loading" :width="100" size="medium" />
@@ -85,7 +85,7 @@
             <div class="flex justify-between">
               <n-skeleton v-if="loading" :width="100" size="medium" />
               <template v-else>
-                <div class="text-sn"> 总销售额： </div>
+                <div class="text-sn"> Total Sales: </div>
                 <div class="text-sn">
                   <CountTo prefix="￥" :startVal="1" :endVal="saleroom.amount" />
                 </div>
@@ -96,13 +96,13 @@
       </n-grid-item>
       <n-grid-item>
         <NCard
-          title="订单量"
+          title="Orders"
           :segmented="{ content: true, footer: true }"
           size="small"
           :bordered="false"
         >
           <template #header-extra>
-            <n-tag type="warning">周</n-tag>
+            <n-tag type="warning">Week</n-tag>
           </template>
           <div class="flex justify-between px-1 py-1">
             <n-skeleton v-if="loading" :width="100" size="medium" />
@@ -112,7 +112,7 @@
             <div class="text-sn">
               <n-skeleton v-if="loading" :width="100" size="medium" />
               <template v-else>
-                日同比
+                Daily Comparison
                 <CountTo :startVal="1" suffix="%" :endVal="orderLarge.rise" />
                 <n-icon size="12" color="#00ff6f">
                   <CaretUpOutlined />
@@ -122,7 +122,7 @@
             <div class="text-sn">
               <n-skeleton v-if="loading" :width="100" size="medium" />
               <template v-else>
-                周同比
+                Weekly Comparison
                 <CountTo :startVal="1" suffix="%" :endVal="orderLarge.rise" />
                 <n-icon size="12" color="#ffde66">
                   <CaretDownOutlined />
@@ -134,7 +134,7 @@
             <div class="flex justify-between">
               <n-skeleton v-if="loading" :width="100" size="medium" />
               <template v-else>
-                <div class="text-sn"> 转化率： </div>
+                <div class="text-sn"> Conversion Rate: </div>
                 <div class="text-sn">
                   <CountTo :startVal="1" suffix="%" :endVal="orderLarge.amount" />
                 </div>
@@ -145,13 +145,13 @@
       </n-grid-item>
       <n-grid-item>
         <NCard
-          title="成交额"
+          title="Transaction Volume"
           :segmented="{ content: true, footer: true }"
           size="small"
           :bordered="false"
         >
           <template #header-extra>
-            <n-tag type="error">月</n-tag>
+            <n-tag type="error">Month</n-tag>
           </template>
           <div class="flex justify-between px-1 py-1">
             <n-skeleton v-if="loading" :width="100" size="medium" />
@@ -161,7 +161,7 @@
             <div class="text-sn">
               <n-skeleton v-if="loading" :width="100" size="medium" />
               <template v-else>
-                月同比
+                Monthly Comparison
                 <CountTo :startVal="1" suffix="%" :endVal="volume.rise" />
                 <n-icon size="12" color="#00ff6f">
                   <CaretUpOutlined />
@@ -171,7 +171,7 @@
             <div class="text-sn">
               <n-skeleton v-if="loading" :width="100" size="medium" />
               <template v-else>
-                月同比
+                Monthly Comparison
                 <CountTo :startVal="1" suffix="%" :endVal="volume.decline" />
                 <n-icon size="12" color="#ffde66">
                   <CaretDownOutlined />
@@ -183,7 +183,7 @@
             <div class="flex justify-between">
               <n-skeleton v-if="loading" :width="100" size="medium" />
               <template v-else>
-                <div class="text-sn"> 总成交额： </div>
+                <div class="text-sn"> Total Transaction Volume: </div>
                 <div class="text-sn">
                   <CountTo prefix="￥" :startVal="1" :endVal="volume.amount" />
                 </div>
@@ -194,7 +194,7 @@
       </n-grid-item>
     </n-grid>
 
-    <!--导航卡片-->
+    <!--Navigation Cards-->
     <div class="mt-4">
       <n-grid cols="1 s:2 m:3 l:8 xl:8 2xl:8" responsive="screen" :x-gap="16" :y-gap="8">
         <n-grid-item v-for="(item, index) in iconList" :key="index">
@@ -219,7 +219,7 @@
       </n-grid>
     </div>
 
-    <!--访问量 | 流量趋势-->
+    <!--Visits | Traffic Trends-->
     <VisiTab />
   </div>
 </template>
@@ -274,12 +274,12 @@
   const orderLarge = ref({} as InOrderLarge);
   const volume = ref({} as InVolume);
 
-  // 图标列表
+  // Icon List
   const iconList = [
     {
       icon: UsergroupAddOutlined,
       size: '32',
-      title: '用户',
+      title: 'Users',
       color: '#69c0ff',
       eventObject: {
         click: () => {},
@@ -288,7 +288,7 @@
     {
       icon: BarChartOutlined,
       size: '32',
-      title: '分析',
+      title: 'Analytics',
       color: '#69c0ff',
       eventObject: {
         click: () => {},
@@ -297,7 +297,7 @@
     {
       icon: ShoppingCartOutlined,
       size: '32',
-      title: '商品',
+      title: 'Products',
       color: '#ff9c6e',
       eventObject: {
         click: () => {},
@@ -306,7 +306,7 @@
     {
       icon: AccountBookOutlined,
       size: '32',
-      title: '订单',
+      title: 'Orders',
       color: '#b37feb',
       eventObject: {
         click: () => {},
@@ -315,7 +315,7 @@
     {
       icon: CreditCardOutlined,
       size: '32',
-      title: '票据',
+      title: 'Invoices',
       color: '#ffd666',
       eventObject: {
         click: () => {},
@@ -324,7 +324,7 @@
     {
       icon: MailOutlined,
       size: '32',
-      title: '消息',
+      title: 'Messages',
       color: '#5cdbd3',
       eventObject: {
         click: () => {},
@@ -333,7 +333,7 @@
     {
       icon: TagsOutlined,
       size: '32',
-      title: '标签',
+      title: 'Tags',
       color: '#ff85c0',
       eventObject: {
         click: () => {},
@@ -342,7 +342,7 @@
     {
       icon: SettingOutlined,
       size: '32',
-      title: '配置',
+      title: 'Settings',
       color: '#ffc069',
       eventObject: {
         click: () => {},

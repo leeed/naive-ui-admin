@@ -31,20 +31,20 @@ import SafetySetting from './SafetySetting.vue';
 
 const typeTabList = [
   {
-    name: '基本设置',
-    desc: '个人账户信息设置',
+    name: 'Basic Settings',
+    desc: 'Personal account information settings',
     key: 1,
   },
   {
-    name: '安全设置',
-    desc: '密码，邮箱等设置',
+    name: 'Security Settings',
+    desc: 'Password, email settings',
     key: 2,
   },
 ];
 
 const state = reactive({
   type: 1,
-  typeTitle: '基本设置',
+  typeTitle: 'Basic Settings',
 });
 
 function switchType(e) {

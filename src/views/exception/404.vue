@@ -4,8 +4,8 @@
       <img src="~@/assets/images/exception/404.svg" alt="" />
     </div>
     <div class="text-center">
-      <h1 class="text-base text-gray-500">抱歉，你访问的页面不存在</h1>
-      <n-button type="info" @click="goHome">回到首页</n-button>
+      <h1 class="text-base text-gray-500">Sorry, the page you visited does not exist</h1>
+      <n-button type="info" @click="goHome">Back to Home</n-button>
     </div>
   </div>
 </template>

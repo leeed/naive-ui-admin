@@ -2,85 +2,85 @@
   <n-grid cols="2 s:2 m:2 l:3 xl:3 2xl:3" responsive="screen">
     <n-grid-item>
       <n-form :label-width="120" :model="formValue" :rules="rules" ref="formRef">
-        <n-form-item label="商品图片(大)">
+        <n-form-item label="Product Image (Large)">
           <n-space align="center">
-            <span>宽度：</span>
+            <span>Width:</span>
             <n-input
               v-model:value="formValue.bigWidth"
               style="width: 80px"
-              placeholder="宽度像素"
+              placeholder="px"
             />
-            <span>高度：</span>
+            <span>Height:</span>
             <n-input
               v-model:value="formValue.bigHeight"
               style="width: 80px"
-              placeholder="高度像素"
+              placeholder="px"
             />
           </n-space>
         </n-form-item>
 
-        <n-form-item label="商品图片(小)">
+        <n-form-item label="Product Image (Small)">
           <n-space align="center">
-            <span>宽度：</span>
+            <span>Width:</span>
             <n-input
               v-model:value="formValue.smallWidth"
               style="width: 80px"
-              placeholder="宽度像素"
+              placeholder="px"
             />
-            <span>高度：</span>
+            <span>Height:</span>
             <n-input
               v-model:value="formValue.smallHeight"
               style="width: 80px"
-              placeholder="高度像素"
+              placeholder="px"
             />
           </n-space>
         </n-form-item>
 
-        <n-form-item label="水印透明度" path="watermarkClarity">
+        <n-form-item label="Watermark Opacity" path="watermarkClarity">
           <n-input-number
             v-model:value="formValue.watermarkClarity"
             :show-button="false"
-            placeholder="请输入水印透明度"
+            placeholder="Enter opacity (0-100)"
           />
         </n-form-item>
 
-        <n-form-item label="水印图片" path="watermarkClarity">
+        <n-form-item label="Watermark Image" path="watermarkClarity">
           <n-upload action="http://www.mocky.io/v2/5e4bafc63100007100d8b70f">
-            <n-button>上传文件</n-button>
+            <n-button>Upload File</n-button>
           </n-upload>
         </n-form-item>
 
-        <n-form-item label="水印位置" path="watermarkPlace">
+        <n-form-item label="Watermark Position" path="watermarkPlace">
           <n-select
-            placeholder="请选择价格精确方式"
+            placeholder="Select position"
             :options="watermarkPlaceList"
             v-model:value="formValue.watermarkPlace"
           />
         </n-form-item>
 
-        <n-form-item label="价格精确位数" path="pricePreciseNum">
+        <n-form-item label="Price Decimal Places" path="pricePreciseNum">
           <n-select
-            placeholder="请选择价格精确位数"
+            placeholder="Select decimal places"
             :options="pricePreciseNumList"
             v-model:value="formValue.pricePreciseNum"
           />
         </n-form-item>
 
-        <n-form-item label="价格精确方式" path="pricePrecise">
+        <n-form-item label="Rounding Method" path="pricePrecise">
           <n-select
-            placeholder="请选择价格精确方式"
+            placeholder="Select rounding method"
             :options="pricePreciseList"
             v-model:value="formValue.pricePrecise"
           />
         </n-form-item>
 
-        <n-form-item label="前台显示市场价" path="isMarketPrice">
+        <n-form-item label="Show Market Price" path="isMarketPrice">
           <n-switch size="large" v-model:value="formValue.isMarketPrice" />
         </n-form-item>
 
         <div>
           <n-space>
-            <n-button type="primary" @click="formSubmit">更新显示信息</n-button>
+            <n-button type="primary" @click="formSubmit">Update Display Information</n-button>
           </n-space>
         </div>
       </n-form>
@@ -95,59 +95,59 @@
   const rules = {
     name: {
       required: true,
-      message: '请输入网站名称',
+      message: 'Please enter site name',
       trigger: 'blur',
     },
     mobile: {
       required: true,
-      message: '请输入联系电话',
+      message: 'Please enter phone number',
       trigger: 'input',
     },
   };
   const watermarkPlaceList = [
     {
-      label: '左上',
+      label: 'Top Left',
       value: 1,
     },
     {
-      label: '右上',
+      label: 'Top Right',
       value: 2,
     },
     {
-      label: '居中',
+      label: 'Center',
       value: 3,
     },
     {
-      label: '右下',
+      label: 'Bottom Right',
       value: 4,
     },
   ];
 
   const pricePreciseNumList = [
     {
-      label: '2位',
+      label: '2 digits',
       value: 1,
     },
     {
-      label: '3位',
+      label: '3 digits',
       value: 2,
     },
     {
-      label: '4位',
+      label: '4 digits',
       value: 3,
     },
   ];
   const pricePreciseList = [
     {
-      label: '四舍五入',
+      label: 'Round',
       value: 1,
     },
     {
-      label: '向上取整',
+      label: 'Round Up',
       value: 2,
     },
     {
-      label: '向下取整',
+      label: 'Round Down',
       value: 3,
     },
   ];
@@ -170,12 +170,12 @@
   function systemOpenChange(value) {
     if (!value) {
       dialog.warning({
-        title: '提示',
-        content: '您确定要关闭系统访问吗？该操作立马生效，请慎重操作！',
-        positiveText: '确定',
-        negativeText: '取消',
+        title: 'Warning',
+        content: 'Are you sure to disable site access? This takes effect immediately!',
+        positiveText: 'Confirm',
+        negativeText: 'Cancel',
         onPositiveClick: () => {
-          message.success('操作成功');
+          message.success('Operation successful');
         },
         onNegativeClick: () => {
           formValue.value.systemOpen = true;
@@ -187,9 +187,9 @@
   function formSubmit() {
     formRef.value.validate((errors) => {
       if (!errors) {
-        message.success('验证成功');
+        message.success('Verification successful');
       } else {
-        message.error('验证失败，请填写完整信息');
+        message.error('Verification failed, please fill in all information');
       }
     });
   }

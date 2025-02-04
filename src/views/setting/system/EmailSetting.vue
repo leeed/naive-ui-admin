@@ -2,33 +2,33 @@
   <n-grid cols="2 s:2 m:2 l:3 xl:3 2xl:3" responsive="screen">
     <n-grid-item>
       <n-form :label-width="120" :model="formValue" :rules="rules" ref="formRef">
-        <n-form-item label="发件人邮箱" path="originator">
-          <n-input v-model:value="formValue.originator" placeholder="请输入发件人邮箱" />
+        <n-form-item label="Sender Email" path="originator">
+          <n-input v-model:value="formValue.originator" placeholder="Please enter sender email" />
         </n-form-item>
 
-        <n-form-item label="SMTP服务器地址">
-          <n-input placeholder="请输入SMTP服务器地址" />
+        <n-form-item label="SMTP Server Address">
+          <n-input placeholder="Please enter SMTP server address" />
         </n-form-item>
 
-        <n-form-item label="SMTP服务器端口">
-          <n-input placeholder="请输入SMTP服务器端口" />
+        <n-form-item label="SMTP Server Port">
+          <n-input placeholder="Please enter SMTP port" />
         </n-form-item>
 
-        <n-form-item label="SMTP用户名">
-          <n-input placeholder="请输入SMTP用户名" />
+        <n-form-item label="SMTP Username">
+          <n-input placeholder="Please enter SMTP username" />
         </n-form-item>
 
-        <n-form-item label="SMTP密码">
-          <n-input type="password" placeholder="请输入SMTP密码" />
+        <n-form-item label="SMTP Password">
+          <n-input type="password" placeholder="Please enter SMTP password" />
         </n-form-item>
 
-        <n-form-item label="邮件测试">
-          <n-button>邮件测试</n-button>
+        <n-form-item label="Test Email">
+          <n-button>Send Test Email</n-button>
         </n-form-item>
 
         <div>
           <n-space>
-            <n-button type="primary" @click="formSubmit">更新邮件信息</n-button>
+            <n-button type="primary" @click="formSubmit">Update Email Settings</n-button>
           </n-space>
         </div>
       </n-form>
@@ -43,7 +43,7 @@
   const rules = {
     originator: {
       required: true,
-      message: '请输入发件人邮箱',
+      message: 'Please enter sender email',
       trigger: 'blur',
     },
   };
@@ -58,9 +58,9 @@
   function formSubmit() {
     formRef.value.validate((errors) => {
       if (!errors) {
-        message.success('验证成功');
+        message.success('Verification successful');
       } else {
-        message.error('验证失败，请填写完整信息');
+        message.error('Verification failed, please fill in all information');
       }
     });
   }

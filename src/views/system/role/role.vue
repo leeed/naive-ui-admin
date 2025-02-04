@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="n-layout-page-header">
-      <n-card :bordered="false" title="角色权限管理">
-        页面数据为 Mock 示例数据，非真实数据。
+      <n-card :bordered="false" title="Role Permission Management">
+        Page data is mock example data, not real data.
       </n-card>
     </div>
     <n-card :bordered="false" class="mt-4 proCard">
@@ -21,7 +21,7 @@
                 <PlusOutlined />
               </n-icon>
             </template>
-            新增角色
+            Add Role
           </n-button>
         </template>
 
@@ -49,13 +49,13 @@
       <template #action>
         <n-space>
           <n-button type="info" ghost icon-placement="left" @click="packHandle">
-            全部{{ expandedKeys.length ? '收起' : '展开' }}
+            {{ expandedKeys.length ? 'Collapse All' : 'Expand All' }}
           </n-button>
 
           <n-button type="info" ghost icon-placement="left" @click="checkedAllHandle">
-            全部{{ checkedAll ? '取消' : '选择' }}
+            {{ checkedAll ? 'Unselect All' : 'Select All' }}
           </n-button>
-          <n-button type="primary" :loading="formBtnLoading" @click="confirmForm">提交</n-button>
+          <n-button type="primary" :loading="formBtnLoading" @click="confirmForm">Submit</n-button>
         </n-space>
       </template>
     </n-modal>
@@ -95,7 +95,7 @@
 
   const actionColumn = reactive({
     width: 250,
-    title: '操作',
+    title: 'Actions',
     key: 'action',
     fixed: 'right',
     render(record) {
@@ -103,7 +103,7 @@
         style: 'button',
         actions: [
           {
-            label: '菜单权限',
+            label: 'Menu Permissions',
             onClick: handleMenuAuth.bind(null, record),
             // 根据业务控制是否显示 isShow 和 auth 是并且关系
             ifShow: () => {
@@ -113,7 +113,7 @@
             auth: ['basic_list'],
           },
           {
-            label: '编辑',
+            label: 'Edit',
             onClick: handleEdit.bind(null, record),
             ifShow: () => {
               return true;
@@ -121,7 +121,7 @@
             auth: ['basic_list'],
           },
           {
-            label: '删除',
+            label: 'Delete',
             onClick: handleDelete.bind(null, record),
             // 根据业务控制是否显示 isShow 和 auth 是并且关系
             ifShow: () => {
@@ -160,7 +160,7 @@
     formBtnLoading.value = true;
     setTimeout(() => {
       showModal.value = false;
-      message.success('提交成功');
+      message.success('Submission successful');
       reloadTable();
       formBtnLoading.value = false;
     }, 200);
@@ -174,11 +174,11 @@
 
   function handleDelete(record: Recordable) {
     console.log('点击了删除', record);
-    message.info('点击了删除');
+    message.info('Delete clicked');
   }
 
   function handleMenuAuth(record: Recordable) {
-    editRoleTitle.value = `分配 ${record.name} 的菜单权限`;
+    editRoleTitle.value = `Assign ${record.name}'s menu permissions`;
     checkedKeys.value = record.menu_keys;
     showModal.value = true;
   }

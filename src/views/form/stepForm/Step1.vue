@@ -7,33 +7,33 @@
     ref="form1Ref"
     style="max-width: 500px; margin: 40px auto 0 80px"
   >
-    <n-form-item label="付款账户" path="myAccount">
+    <n-form-item label="Payer Account" path="myAccount">
       <n-select
-        placeholder="请选择付款账户"
+        placeholder="Select payer account"
         :options="myAccountList"
         v-model:value="formValue.myAccount"
       />
     </n-form-item>
-    <n-form-item label="收款账户" path="account">
+    <n-form-item label="Beneficiary Account" path="account">
       <n-input-group>
         <n-select
-          placeholder="请选择"
+          placeholder="Select"
           :options="accountTypeList"
           :style="{ width: '20%' }"
           v-model:value="formValue.accountType"
         />
         <n-input
-          placeholder="请输入收款账户"
+          placeholder="Enter beneficiary account"
           :style="{ width: '80%' }"
           v-model:value="formValue.account"
         />
       </n-input-group>
     </n-form-item>
-    <n-form-item label="收款人姓名" path="name">
-      <n-input placeholder="请输入收款人姓名" v-model:value="formValue.name" />
+    <n-form-item label="Beneficiary Name" path="name">
+      <n-input placeholder="Enter beneficiary name" v-model:value="formValue.name" />
     </n-form-item>
-    <n-form-item label="转账金额" path="money">
-      <n-input placeholder="请输入转账金额" v-model:value="formValue.money">
+    <n-form-item label="Amount" path="money">
+      <n-input placeholder="Enter transfer amount" v-model:value="formValue.money">
         <template #prefix>
           <span class="text-gray-400">￥</span>
         </template>
@@ -41,7 +41,7 @@
     </n-form-item>
     <div style="margin-left: 80px">
       <n-space>
-        <n-button type="primary" @click="formSubmit">下一步</n-button>
+        <n-button type="primary" @click="formSubmit">Next Step</n-button>
       </n-space>
     </div>
   </n-form>
@@ -64,11 +64,11 @@
 
   const accountTypeList = [
     {
-      label: '微信',
+      label: 'WeChat',
       value: 1,
     },
     {
-      label: '支付宝',
+      label: 'Alipay',
       value: 2,
     },
   ];
@@ -81,31 +81,31 @@
   const formValue = ref({
     accountType: 1,
     myAccount: null,
-    account: 'xioama@qq.com',
+    account: 'john@example.com',
     money: '1980',
-    name: 'Ah jung',
+    name: 'John Doe',
   });
 
   const rules = {
     name: {
       required: true,
-      message: '请输入收款人姓名',
+      message: 'Please enter beneficiary name',
       trigger: 'blur',
     },
     account: {
       required: true,
-      message: '请输入收款账户',
+      message: 'Please enter account',
       trigger: 'blur',
     },
     money: {
       required: true,
-      message: '请输入转账金额',
+      message: 'Please enter amount',
       trigger: 'blur',
     },
     myAccount: {
       required: true,
       type: 'number',
-      message: '请选择付款账户',
+      message: 'Please select payer account',
       trigger: 'change',
     },
   };
@@ -115,7 +115,7 @@
       if (!errors) {
         emit('nextStep');
       } else {
-        message.error('验证失败，请填写完整信息');
+        message.error('Validation failed, please complete all information');
       }
     });
   }

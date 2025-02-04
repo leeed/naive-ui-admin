@@ -8,38 +8,38 @@
         label-placement="left"
         :label-width="100"
       >
-        <n-form-item label="类型" path="type">
-          <span>{{ formParams.type === 1 ? '侧边栏菜单' : '' }}</span>
+        <n-form-item label="Type" path="type">
+          <span>{{ formParams.type === 1 ? 'Sidebar Menu' : '' }}</span>
         </n-form-item>
-        <n-form-item label="标题" path="label">
-          <n-input placeholder="请输入标题" v-model:value="formParams.label" />
+        <n-form-item label="Title" path="label">
+          <n-input placeholder="Please enter title" v-model:value="formParams.label" />
         </n-form-item>
-        <n-form-item label="副标题" path="subtitle">
-          <n-input placeholder="请输入副标题" v-model:value="formParams.subtitle" />
+        <n-form-item label="Subtitle" path="subtitle">
+          <n-input placeholder="Please enter subtitle" v-model:value="formParams.subtitle" />
         </n-form-item>
-        <n-form-item label="路径" path="path">
-          <n-input placeholder="请输入路径" v-model:value="formParams.path" />
+        <n-form-item label="Path" path="path">
+          <n-input placeholder="Please enter path" v-model:value="formParams.path" />
         </n-form-item>
-        <n-form-item label="打开方式" path="openType">
+        <n-form-item label="Open Type" path="openType">
           <n-radio-group v-model:value="formParams.openType" name="openType">
             <n-space>
-              <n-radio :value="1">当前窗口</n-radio>
-              <n-radio :value="2">新窗口</n-radio>
+              <n-radio :value="1">Current Window</n-radio>
+              <n-radio :value="2">New Window</n-radio>
             </n-space>
           </n-radio-group>
         </n-form-item>
-        <n-form-item label="菜单权限" path="auth">
-          <n-input placeholder="请输入权限，多个权限用，分割" v-model:value="formParams.auth" />
+        <n-form-item label="Menu Permissions" path="auth">
+          <n-input placeholder="Enter permissions, separate with commas" v-model:value="formParams.auth" />
         </n-form-item>
-        <n-form-item label="隐藏侧边栏" path="hidden">
+        <n-form-item label="Hide Sidebar" path="hidden">
           <n-switch v-model:value="formParams.hidden" />
         </n-form-item>
       </n-form>
 
       <template #footer>
         <n-space>
-          <n-button type="primary" :loading="state.subLoading" @click="formSubmit">提交</n-button>
-          <n-button @click="handleReset">重置</n-button>
+          <n-button type="primary" :loading="state.subLoading" @click="formSubmit">Submit</n-button>
+          <n-button @click="handleReset">Reset</n-button>
         </n-space>
       </template>
     </n-drawer-content>
@@ -53,12 +53,12 @@
   const rules = {
     label: {
       required: true,
-      message: '请输入标题',
+      message: 'Please enter title',
       trigger: 'blur',
     },
     path: {
       required: true,
-      message: '请输入路径',
+      message: 'Please enter path',
       trigger: 'blur',
     },
   };
@@ -66,7 +66,7 @@
   defineProps({
     title: {
       type: String,
-      default: '添加顶级菜单',
+      default: 'Add Top-level Menu',
     },
     width: {
       type: Number,
@@ -103,11 +103,11 @@
   function formSubmit() {
     formRef.value.validate((errors) => {
       if (!errors) {
-        message.success('添加成功');
+        message.success('Added successfully');
         handleReset();
         closeDrawer();
       } else {
-        message.error('请填写完整信息');
+        message.error('Please complete all required fields');
       }
     });
   }
