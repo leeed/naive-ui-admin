@@ -22,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'console',
         name: `${routeName}_console`,
         meta: {
-          title: '主控台',
+          title: 'Console', // 主控台 -> Console
           permissions: ['dashboard_console'],
           affix: true,
         },
@@ -32,7 +32,7 @@ const routes: Array<RouteRecordRaw> = [
       //   path: 'monitor',
       //   name: `${ routeName }_monitor`,
       //   meta: {
-      //     title: '监控页',
+      //     title: 'Monitor', // 监控页 -> Monitor
       //     permissions: ['dashboard_monitor']
       //   },
       //   component: () => import('@/views/dashboard/monitor/monitor.vue')
@@ -41,7 +41,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'workplace',
         name: `${routeName}_workplace`,
         meta: {
-          title: '工作台',
+          title: 'Workplace', // 工作台 -> Workplace
           keepAlive: true,
           permissions: ['dashboard_workplace'],
         },

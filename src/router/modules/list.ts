@@ -10,7 +10,7 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/list/basic-list',
     component: Layout,
     meta: {
-      title: '列表页面',
+      title: 'List Pages', // 列表页面 -> List Pages
       icon: renderIcon(TableOutlined),
       sort: 2,
     },
@@ -19,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'basic-list',
         name: 'basic-list',
         meta: {
-          title: '基础列表',
+          title: 'Basic List', // 基础列表 -> Basic List
         },
         component: () => import('@/views/list/basicList/index.vue'),
       },
@@ -27,7 +27,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'basic-info/:id?',
         name: 'basic-info',
         meta: {
-          title: '基础详情',
+          title: 'Basic Details', // 基础详情 -> Basic Details
           hidden: true,
           activeMenu: 'basic-list',
         },

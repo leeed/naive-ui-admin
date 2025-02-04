@@ -10,7 +10,7 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/exception/403',
     component: Layout,
     meta: {
-      title: '异常页面',
+      title: 'Exception Pages', // 异常页面 -> Exception Pages
       icon: renderIcon(ExclamationCircleOutlined),
       sort: 3,
     },

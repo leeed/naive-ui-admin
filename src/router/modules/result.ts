@@ -10,7 +10,7 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/result/success',
     component: Layout,
     meta: {
-      title: '结果页面',
+      title: 'Result Pages', // 结果页面 -> Result Pages
       icon: renderIcon(CheckCircleOutlined),
       sort: 4,
     },
@@ -19,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'success',
         name: 'result-success',
         meta: {
-          title: '成功页',
+          title: 'Success Page', // 成功页 -> Success Page
         },
         component: () => import('@/views/result/success.vue'),
       },
@@ -27,7 +27,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'fail',
         name: 'result-fail',
         meta: {
-          title: '失败页',
+          title: 'Failure Page', // 失败页 -> Failure Page
         },
         component: () => import('@/views/result/fail.vue'),
       },
@@ -35,7 +35,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'info',
         name: 'result-info',
         meta: {
-          title: '信息页',
+          title: 'Info Page', // 信息页 -> Info Page
         },
         component: () => import('@/views/result/info.vue'),
       },

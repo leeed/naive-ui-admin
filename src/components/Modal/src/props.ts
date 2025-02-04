@@ -2,10 +2,10 @@ import { NModal } from 'naive-ui';
 
 export const basicProps = {
   ...NModal.props,
-  // 确认按钮文字
+  // Submit button text
   subBtuText: {
     type: String,
-    default: '确认',
+    default: 'Confirm', // 确认 -> Confirm
   },
   showIcon: {
     type: Boolean,

@@ -14,7 +14,7 @@ const menuList = () => {
       path: '/dashboard',
       children: [
         {
-          label: '主控台',
+          label: 'Console', // 主控台 -> Console
           key: 'console',
           type: 1,
           subtitle: 'console',
@@ -23,7 +23,7 @@ const menuList = () => {
           path: '/dashboard/console',
         },
         {
-          label: '工作台',
+          label: 'Workplace', // 工作台 -> Workplace
           key: 'workplace',
           type: 1,
           subtitle: 'workplace',
@@ -34,7 +34,7 @@ const menuList = () => {
       ],
     },
     {
-      label: '表单管理',
+      label: 'Form Management', // 表单管理 -> Form Management
       key: 'form',
       type: 1,
       subtitle: 'form',
@@ -43,7 +43,7 @@ const menuList = () => {
       path: '/form',
       children: [
         {
-          label: '基础表单',
+          label: 'Basic Form', // 基础表单 -> Basic Form
           key: 'basic-form',
           type: 1,
           subtitle: 'basic-form',
@@ -52,7 +52,7 @@ const menuList = () => {
           path: '/form/basic-form',
         },
         {
-          label: '分步表单',
+          label: 'Step Form', // 分步表单 -> Step Form
           key: 'step-form',
           type: 1,
           subtitle: 'step-form',
@@ -61,7 +61,7 @@ const menuList = () => {
           path: '/form/step-form',
         },
         {
-          label: '表单详情',
+          label: 'Form Details', // 表单详情 -> Form Details
           key: 'detail',
           type: 1,
           subtitle: 'detail',

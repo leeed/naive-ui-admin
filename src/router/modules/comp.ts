@@ -12,7 +12,7 @@ const routes: Array<RouteRecordRaw> = [
     component: Layout,
     redirect: '/comp/table',
     meta: {
-      title: '组件示例',
+      title: 'Component Examples', // 组件示例 -> Component Examples
       icon: renderIcon(WalletOutlined),
       sort: 8,
     },
@@ -23,14 +23,14 @@ const routes: Array<RouteRecordRaw> = [
         redirect: '/comp/table/basic',
         component: ParentLayout,
         meta: {
-          title: '表格',
+          title: 'Table', // 表格 -> Table
         },
         children: [
           {
             path: 'basic',
             name: `${routeName}_table_basic`,
             meta: {
-              title: '基础表格',
+              title: 'Basic Table', // 基础表格 -> Basic Table
             },
             component: () => import('@/views/comp/table/basic.vue'),
           },
@@ -38,7 +38,7 @@ const routes: Array<RouteRecordRaw> = [
             path: 'editCell',
             name: `${routeName}_table_editCell`,
             meta: {
-              title: '单元格编辑',
+              title: 'Cell Editing', // 单元格编辑 -> Cell Editing
             },
             component: () => import('@/views/comp/table/editCell.vue'),
           },
@@ -46,7 +46,7 @@ const routes: Array<RouteRecordRaw> = [
             path: 'editRow',
             name: `${routeName}_table_editRow`,
             meta: {
-              title: '整行编辑',
+              title: 'Row Editing', // 整行编辑 -> Row Editing
             },
             component: () => import('@/views/comp/table/editRow.vue'),
           },
@@ -58,14 +58,14 @@ const routes: Array<RouteRecordRaw> = [
         redirect: '/comp/form/basic',
         component: ParentLayout,
         meta: {
-          title: '表单',
+          title: 'Form', // 表单 -> Form
         },
         children: [
           {
             path: 'basic',
             name: `${routeName}_form_basic`,
             meta: {
-              title: '基础使用',
+              title: 'Basic Usage', // 基础使用 -> Basic Usage
             },
             component: () => import('@/views/comp/form/basic.vue'),
           },
@@ -73,7 +73,7 @@ const routes: Array<RouteRecordRaw> = [
             path: 'useForm',
             name: `useForm`,
             meta: {
-              title: 'useForm',
+              title: 'useForm', // useForm -> useForm (This one was already in English)
             },
             component: () => import('@/views/comp/form/useForm.vue'),
           },
@@ -83,7 +83,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'upload',
         name: `${routeName}_upload`,
         meta: {
-          title: '上传图片',
+          title: 'Image Upload', // 上传图片 -> Image Upload
         },
         component: () => import('@/views/comp/upload/index.vue'),
       },
@@ -91,7 +91,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'modal',
         name: `${routeName}_modal`,
         meta: {
-          title: '弹窗扩展',
+          title: 'Modal Extension', // 弹窗扩展 -> Modal Extension
         },
         component: () => import('@/views/comp/modal/index.vue'),
       },
@@ -99,16 +99,16 @@ const routes: Array<RouteRecordRaw> = [
         path: 'richtext',
         name: `richtext`,
         meta: {
-          title: '富文本',
+          title: 'Rich Text', // 富文本 -> Rich Text
           extra: renderNew(),
         },
         component: () => import('@/views/comp/richtext/vue-quill.vue'),
       },
       {
         path: 'drag',
-        name: `Drag`,
+        name: `Drag`, // Drag -> Drag (This one was already in English)
         meta: {
-          title: '拖拽',
+          title: 'Drag&Drop', // 拖拽 -> Drag and Drop
           extra: renderNew(),
         },
         component: () => import('@/views/comp/drag/index.vue'),

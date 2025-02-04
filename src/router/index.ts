@@ -33,14 +33,14 @@ export const LoginRoute: RouteRecordRaw = {
   name: 'Login',
   component: () => import('@/views/login/index.vue'),
   meta: {
-    title: '登录',
+    title: 'Login', // 登录 -> Login
   },
 };
 
-//需要验证权限
+// Routes that require authentication
 export const asyncRoutes = [...routeModuleList];
 
-//普通路由 无需验证权限
+// Public routes (no authentication required)
 export const constantRouter: RouteRecordRaw[] = [LoginRoute, RootRoute, RedirectRoute];
 
 const router = createRouter({
@@ -52,7 +52,7 @@ const router = createRouter({
 
 export function setupRouter(app: App) {
   app.use(router);
-  // 创建路由守卫
+  // Create router guards
   createRouterGuards(router);
 }
 

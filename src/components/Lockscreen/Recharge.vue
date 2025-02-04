@@ -10,11 +10,9 @@
     <div class="charging">
       <div>{{ batteryStatus }}</div>
       <div v-show="Number.isFinite(battery.dischargingTime) && battery.dischargingTime != 0">
-        剩余可使用时间：{{ calcDischargingTime }}
-      </div>
+        Remaining Usage Time: {{ calcDischargingTime }}  </div>
       <span v-show="Number.isFinite(battery.chargingTime) && battery.chargingTime != 0">
-        距离电池充满需要：{{ calcChargingTime }}
-      </span>
+        Time to Full Charge: {{ calcChargingTime }} </span>
     </div>
   </div>
 </template>
@@ -24,15 +22,14 @@
 
   export default defineComponent({
     name: 'HuaweiCharge',
-    // props: ['batteryStatus', 'battery', 'calcDischargingTime'],
     props: {
       battery: {
-        // 电池对象
+        // Battery object
         type: Object,
         default: () => ({}),
       },
       calcDischargingTime: {
-        // 电池剩余时间可用时间
+        // Battery remaining usage time
         type: String,
         default: '',
       },
@@ -41,9 +38,9 @@
         default: '',
       },
       batteryStatus: {
-        // 电池状态
+        // Battery status
         type: String,
-        validator: (val: string) => ['充电中', '已充满', '已断开电源'].includes(val),
+        validator: (val: string) => ['Charging', 'Full', 'Disconnected'].includes(val), // 充电中', '已充满', '已断开电源' -> 'Charging', 'Full', 'Disconnected'
       },
     },
   });

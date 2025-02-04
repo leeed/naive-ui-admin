@@ -29,11 +29,10 @@
             <n-switch v-model:value="isStriped" @update:value="setStriped" />
           </div>
         </template>
-        <span>表格斑马纹</span>
+        <span>Striped Table</span>
       </n-tooltip>
       <n-divider vertical />
 
-      <!--刷新-->
       <n-tooltip trigger="hover">
         <template #trigger>
           <div class="table-toolbar-right-icon" @click="reload">
@@ -42,7 +41,7 @@
             </n-icon>
           </div>
         </template>
-        <span>刷新</span>
+        <span>Refresh</span>
       </n-tooltip>
 
       <!--密度-->
@@ -61,7 +60,7 @@
             </n-dropdown>
           </div>
         </template>
-        <span>密度</span>
+        <span>Density</span>
       </n-tooltip>
 
       <!--表格设置单独抽离成组件-->

@@ -72,7 +72,7 @@ export function useColumns(propsRef: ComputedRef<BasicTableProps>) {
                     }
                   ),
                 ]),
-                '该列可编辑'
+                'This column is editable' // 该列可编辑 -> This column is editable
               );
             };
           }
