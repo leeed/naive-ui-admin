@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="n-layout-page-header">
-      <n-card :bordered="false" title="上传图片"> 上传图片，用于向用户收集图片信息 </n-card>
+      <n-card :bordered="false" title="Image Upload"> Upload images to collect visual information from users </n-card>
     </div>
     <n-card :bordered="false" class="mt-4 proCard">
       <n-grid cols="2 s:1 m:3 l:3 xl:3 2xl:3" responsive="screen">
@@ -14,14 +14,14 @@
             ref="formRef"
             class="py-8"
           >
-            <n-form-item label="预约姓名" path="name">
-              <n-input v-model:value="formValue.name" placeholder="输入姓名" />
+            <n-form-item label="Appointment Name" path="name">
+              <n-input v-model:value="formValue.name" placeholder="Enter name" />
             </n-form-item>
-            <n-form-item label="预约号码" path="mobile">
-              <n-input placeholder="电话号码" v-model:value="formValue.mobile" />
+            <n-form-item label="Contact Number" path="mobile">
+              <n-input placeholder="Phone number" v-model:value="formValue.mobile" />
             </n-form-item>
 
-            <n-form-item label="病例图片" path="images">
+            <n-form-item label="Medical Records" path="images">
               <BasicUpload
                 :action="`${uploadUrl}/v1.0/files`"
                 :headers="uploadHeaders"
@@ -31,13 +31,13 @@
                 :height="100"
                 @upload-change="uploadChange"
                 v-model:value="formValue.images"
-                helpText="单个文件不超过2MB，最多只能上传10个文件"
+                helpText="Single file max 2MB, up to 10 files maximum"
               />
             </n-form-item>
             <div style="margin-left: 80px">
               <n-space>
-                <n-button type="primary" @click="formSubmit">提交预约</n-button>
-                <n-button @click="resetForm">重置</n-button>
+                <n-button type="primary" @click="formSubmit">Submit</n-button>
+                <n-button @click="resetForm">Reset</n-button>
               </n-space>
             </div>
           </n-form>
@@ -58,18 +58,18 @@
   const rules = {
     name: {
       required: true,
-      message: '请输入预约姓名',
+      message: 'Please enter appointment name',
       trigger: 'blur',
     },
     remark: {
       required: true,
-      message: '请输入预约备注',
+      message: 'Please enter appointment notes',
       trigger: 'blur',
     },
     images: {
       required: true,
       type: 'array',
-      message: '请上传病例图片',
+      message: 'Please upload medical records',
       trigger: 'change',
     },
   };
@@ -81,7 +81,7 @@
   const formValue = reactive({
     name: '',
     mobile: '',
-    //图片列表 通常查看和编辑使用 绝对路径 | 相对路径都可以
+    // Image list (supports both absolute and relative paths for viewing/editing)
     images: ['https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'],
   });
 
@@ -94,9 +94,9 @@
   function formSubmit() {
     formRef.value.validate((errors) => {
       if (!errors) {
-        message.success('验证成功');
+        message.success('Validation successful');
       } else {
-        message.error('验证失败，请填写完整信息');
+        message.error('Validation failed, please fill in all information');
       }
     });
   }

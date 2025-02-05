@@ -1,8 +1,8 @@
 <template>
   <n-card :bordered="false" class="proCard">
     <BasicTable
-      title="表格列表"
-      titleTooltip="这是一个提示"
+      title="Table List"
+      titleTooltip="This is a tooltip"
       :columns="columns"
       :request="loadDataTable"
       :row-key="(row) => row.id"

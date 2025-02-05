@@ -1,11 +1,13 @@
 <template>
   <div>
     <div class="n-layout-page-header">
-      <n-card :bordered="false" title="Drag and Drop"> Commonly used for cards, tasks, appointments, workflows, plans, etc. </n-card>
+      <n-card :bordered="false" title="Drag and Drop"> 
+        Commonly used for cards, tasks, appointments, workflows, plans, etc.
+      </n-card>
     </div>
 
     <n-alert title="Drag and Drop Demo" type="info" class="mt-4">
-      Each card can be dragged vertically to reorder. Different cards can also be dragged between containers. Try it out! 
+      Each card can be dragged vertically to reorder. Different cards can also be dragged between containers. Try it out!
     </n-alert>
 
     <n-grid

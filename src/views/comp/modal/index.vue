@@ -1,33 +1,31 @@
 <template>
   <div>
     <div class="n-layout-page-header">
-      <n-card :bordered="false" title="模态框">
-        模态框，用于向用户收集或展示信息，Modal 采用 Dialog 预设，扩展拖拽效果
+      <n-card :bordered="false" title="Modal Box">
+        Modal box, used to collect or display information to users. Modal uses Dialog presets with drag and drop extensions
         <br />
-        以下是 useModal
-        方式，ref方式，也支持，使用方式和其他组件一致，如：modalRef.value.closeModal()
+        Below is the useModal approach. The ref approach is also supported, used similarly to other components, e.g.: modalRef.value.closeModal()
       </n-card>
     </div>
     <n-card :bordered="false" class="mt-4 proCard">
-      <n-alert title="Modal嵌套Form" type="info">
-        使用 useModal 进行弹窗展示和操作，并演示了在Modal内和Form组件，组合使用方法
+      <n-alert title="Modal with nested Form" type="info">
+        Demonstrates using useModal for dialog display and operations, combined with Form component
       </n-alert>
       <n-divider />
       <n-space>
-        <n-button type="primary" @click="showModal">打开Modal嵌套Form例子</n-button>
+        <n-button type="primary" @click="showModal">Open Modal with nested Form example</n-button>
       </n-space>
       <n-divider />
-      <n-alert title="个性化轻量级" type="info">
-        使用 useModal 进行弹窗展示和操作，自定义配置，实现轻量级效果，更多配置，请参考文档
+      <n-alert title="Lightweight Customization" type="info">
+        Using useModal for dialog display with custom configurations for lightweight effects. More configurations available in documentation
       </n-alert>
       <n-divider />
       <n-space>
-        <n-button type="primary" @click="showLightModal">轻量级确认</n-button>
+        <n-button type="primary" @click="showLightModal">Lightweight Confirmation</n-button>
       </n-space>
       <n-divider />
-      <n-alert title="提示" type="info">
-        组件暴露了，setProps 方法，用于修改组件内部
-        Props，比如标题，等，具体参考UI框架文档，DialogReactive Properties
+      <n-alert title="Tip" type="info">
+        The component exposes setProps method to modify internal Props like title. Refer to UI framework documentation for DialogReactive Properties
       </n-alert>
     </n-card>
 
@@ -48,7 +46,7 @@
       @on-ok="lightOkModal"
     >
       <template #default>
-        <p class="text-gray-500" style="padding-left: 35px">一些对话框内容</p>
+        <p class="text-gray-500" style="padding-left: 35px">Some dialog content</p>
       </template>
     </basicModal>
   </div>
@@ -64,25 +62,25 @@
     {
       field: 'name',
       component: 'NInput',
-      label: '姓名',
-      labelMessage: '这是一个提示',
+      label: 'Name',
+      labelMessage: 'This is a hint',
       giProps: {
         span: 1,
       },
       componentProps: {
-        placeholder: '请输入姓名',
+        placeholder: 'Please enter your name',
         onInput: (e: any) => {
           console.log(e);
         },
       },
-      rules: [{ required: true, message: '请输入姓名', trigger: ['blur'] }],
+      rules: [{ required: true, message: 'Please enter your name', trigger: ['blur'] }],
     },
     {
       field: 'mobile',
       component: 'NInputNumber',
-      label: '手机',
+      label: 'Phone',
       componentProps: {
-        placeholder: '请输入手机号码',
+        placeholder: 'Please enter phone number',
         showButton: false,
         onInput: (e: any) => {
           console.log(e);
@@ -92,19 +90,19 @@
     {
       field: 'type',
       component: 'NSelect',
-      label: '类型',
+      label: 'Type',
       giProps: {
         //span: 24,
       },
       componentProps: {
-        placeholder: '请选择类型',
+        placeholder: 'Select type',
         options: [
           {
-            label: '舒适性',
+            label: 'Comfort',
             value: 1,
           },
           {
-            label: '经济性',
+            label: 'Economy',
             value: 2,
           },
         ],
@@ -116,7 +114,7 @@
     {
       field: 'makeDate',
       component: 'NDatePicker',
-      label: '预约时间',
+      label: 'Appointment Date',
       giProps: {
         //span: 24,
       },
@@ -124,6 +122,7 @@
       componentProps: {
         type: 'date',
         clearable: true,
+        placeholder: 'Select date',
         onUpdateValue: (e: any) => {
           console.log(e);
         },
@@ -132,7 +131,7 @@
     {
       field: 'makeTime',
       component: 'NTimePicker',
-      label: '停留时间',
+      label: 'Duration',
       giProps: {
         //span: 24,
       },
@@ -146,23 +145,23 @@
     {
       field: 'makeProject',
       component: 'NCheckbox',
-      label: '预约项目',
+      label: 'Appointment Type',
       giProps: {
         //span: 24,
       },
       componentProps: {
-        placeholder: '请选择预约项目',
+        placeholder: 'Select appointment type',
         options: [
           {
-            label: '种牙',
+            label: 'Dental implant',
             value: 1,
           },
           {
-            label: '补牙',
+            label: 'Tooth filling',
             value: 2,
           },
           {
-            label: '根管',
+            label: 'Root canal',
             value: 3,
           },
         ],
@@ -174,18 +173,18 @@
     {
       field: 'makeSource',
       component: 'NRadioGroup',
-      label: '来源',
+      label: 'Source',
       giProps: {
         //span: 24,
       },
       componentProps: {
         options: [
           {
-            label: '网上',
+            label: 'Online',
             value: 1,
           },
           {
-            label: '门店',
+            label: 'In-store',
             value: 2,
           },
         ],
@@ -196,11 +195,11 @@
     },
     {
       field: 'status',
-      label: '状态',
+      label: 'Status',
       giProps: {
         //span: 24,
       },
-      //插槽
+      // Slot
       slot: 'statusSlot',
     },
   ];
@@ -209,14 +208,14 @@
   const message = useMessage();
 
   const [modalRegister, { openModal, closeModal, setSubLoading }] = useModal({
-    title: '新增预约',
+    title: 'New Appointment',
   });
 
   const [
     lightModalRegister,
     { openModal: lightOpenModal, closeModal: lightCloseModal, setSubLoading: lightSetSubLoading },
   ] = useModal({
-    title: '确认对话框',
+    title: 'Confirmation Dialog',
     showIcon: true,
     type: 'warning',
     closable: false,
@@ -228,7 +227,7 @@
     collapsedRows: 3,
     labelWidth: 120,
     layout: 'horizontal',
-    submitButtonText: '提交预约',
+    submitButtonText: 'Submit Appointment',
     showActionButtonGroup: false,
     schemas,
   });
@@ -238,9 +237,9 @@
     if (formRes) {
       closeModal();
       console.log('formRes', formRes);
-      message.success('提交成功');
+      message.success('Submission successful');
     } else {
-      message.error('验证失败，请填写完整信息');
+      message.error('Validation failed, please complete all required fields');
       setSubLoading(false);
     }
   }
