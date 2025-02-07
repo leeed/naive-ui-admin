@@ -58,15 +58,15 @@
   const timekeeping = () => {
     clearInterval(timer);
     if (route.name == 'login' || isLock.value) return;
-    // 设置不锁屏
+    // Disable screen lock
     useScreenLock.setLock(false);
-    // 重置锁屏时间
+    // Reset lock timer
     useScreenLock.setLockTime();
     timer = setInterval(() => {
-      // 锁屏倒计时递减
+      // Decrease lock countdown
       useScreenLock.setLockTime(lockTime.value - 1);
       if (lockTime.value <= 0) {
-        // 设置锁屏
+        // Activate screen lock
         useScreenLock.setLock(true);
         return clearInterval(timer);
       }

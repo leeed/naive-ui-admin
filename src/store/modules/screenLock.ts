@@ -2,20 +2,20 @@ import { defineStore } from 'pinia';
 import { IS_SCREENLOCKED } from '@/store/mutation-types';
 import { storage } from '@/utils/Storage';
 
-// 长时间不操作默认锁屏时间
+// Default screen lock time after prolonged inactivity
 const initTime = 60 * 60;
 
 const isLocked = storage.get(IS_SCREENLOCKED, false);
 
 export type IScreenLockState = {
-  isLocked: boolean; // 是否锁屏
+  isLocked: boolean; // Whether screen is locked
   lockTime: number;
 };
 
 export const useScreenLockStore = defineStore({
   id: 'app-screen-lock',
   state: (): IScreenLockState => ({
-    isLocked: isLocked === true, // 是否锁屏
+    isLocked: isLocked === true, // Whether screen is locked
     lockTime: isLocked == 'true' ? initTime : 0,
   }),
   getters: {},
