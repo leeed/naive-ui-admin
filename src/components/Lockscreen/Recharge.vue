@@ -40,7 +40,7 @@
       batteryStatus: {
         // Battery status
         type: String,
-        validator: (val: string) => ['Charging', 'Full', 'Disconnected'].includes(val), // 充电中', '已充满', '已断开电源' -> 'Charging', 'Full', 'Disconnected'
+        validator: (val: string) => ['Charging', 'Full', 'Disconnected'].includes(val),
       },
     },
   });
